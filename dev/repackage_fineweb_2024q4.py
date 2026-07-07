@@ -23,8 +23,6 @@ from datasets import load_dataset, interleave_datasets
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-from nanochat.common import get_base_dir
-
 # -----------------------------------------------------------------------------
 # FineWeb CommonCrawl dump names for Oct/Nov/Dec 2024
 DUMPS = ["CC-MAIN-2024-42", "CC-MAIN-2024-46", "CC-MAIN-2024-51"]  # Oct, Nov, Dec 2024
@@ -32,7 +30,8 @@ NUM_SHARDS = 170  # ~150 needed for GPT-2 capability pretraining, +20 padding
 CHARS_PER_SHARD = 250_000_000
 ROW_GROUP_SIZE = 1024
 
-output_dir = os.path.join(get_base_dir(), "base_data_fineweb_2024q4")
+base_dir = os.environ.get("NANOCHAT_BASE_DIR")
+output_dir = os.path.join(base_dir, "base_data_fineweb_2024q4")
 os.makedirs(output_dir, exist_ok=True)
 progress_path = os.path.join(output_dir, "progress.json")
 
