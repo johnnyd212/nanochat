@@ -1,0 +1,10 @@
+Domain_Name: string
+WARC_Target_URI: string
+WARC_Identified_Content_Language: string
+WARC_Date: string
+Content_Type: string
+Content_Length: int32
+wet_record_txt: string
+__index_level_0__: int64
+-- schema metadata --
+pandas: '{"index_columns": ["__index_level_0__"], "column_indexes": [{"na' + 1240
