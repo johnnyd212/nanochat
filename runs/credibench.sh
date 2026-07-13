@@ -20,7 +20,7 @@
 # Default intermediate artifacts directory is in ~/.cache/nanochat
 export OMP_NUM_THREADS=1
 export NUM_GPU=2
-export NANOCHAT_BASE_DIR="$HOME/scratch/safeLLM/.cache/nanochat"
+export NANOCHAT_BASE_DIR="$HOME/scratch/safeLLM/.cache/nanochat-credibench-old"
 mkdir -p $NANOCHAT_BASE_DIR
 
 # -----------------------------------------------------------------------------
