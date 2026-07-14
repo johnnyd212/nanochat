@@ -79,6 +79,7 @@ if shard_index >= NUM_SHARDS:
 # glob picks up the root-level parquet shards while excluding the stray domains CSV.
 streams = [
     load_dataset(repo, data_files="*wetcontent*.parquet", split="train", streaming=True)
+		.select_columns("wet_record_txt")
     for repo in REPOS
 ]
 ds = interleave_datasets(streams, stopping_strategy="all_exhausted").shuffle(seed=42, buffer_size=10_000)
